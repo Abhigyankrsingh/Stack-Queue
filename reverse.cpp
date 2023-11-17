@@ -1,29 +1,32 @@
-#include <iostream>
-#include <stack>
+#include<bits/stdc++.h>
+
 using namespace std;
 
-void reverseString(string &str) {
-    stack<char> s;
 
-    // Push characters onto the stack
-    for (char c : str) {
-        s.push(c);
-    }
+void rever(string &str){
 
-    // Pop characters from the stack and put them back in the string in reverse order
-    for (int i = 0; i < str.length(); i++) {
-        str[i] = s.top();
-        s.pop();
-    }
+   stack<char>s;
+
+   for( auto c: str){
+    s.push(c);
+   }
+
+   for(int i =0; i<str.length(); i++){
+
+     str[i] = s.top();
+     s.pop();
+   }
+
 }
 
-int main() {
-    string input = "Hello, world!";
-    cout << "Original string: " << input << endl;
 
-    // Reverse the string
-    reverseString(input);
+int main(){
 
-    cout << "Reversed string: " << input << endl;
-    return 0;
+    string input = "I am king";
+    
+    rever(input);
+
+    cout << "Reversed string is " <<input;
+
+
 }
